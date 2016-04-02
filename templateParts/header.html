@@ -1,0 +1,241 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-full">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed btn_search" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <div class="glyphicon glyphicon-search" style="font-size:15px;"></div> <!--  -->
+      </button>
+      <div id="titlePage"></div>
+      <!--<a class="navbar-brand" href="#" onclick="history.back()"><span class="glyphicon glyphicon-chevron-left"></span></a>-->
+    </div>
+    
+
+    <!-- Collect the nav links, forms, and other content for toggling  style="display:none;"-->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="container-full">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div>
+                      <ul class="nav nav-tabs menu-ho" role="tablist" style="border-bottom:0px;">
+                        <li role="recherche" class="active text-center" style="width:33.33333333333333%"><a href="#recherche_players" aria-controls="recherche_players" role="tab" data-toggle="tab"><i class="fa fa-user"></i><span key="FindPlayers" class="TranslationDiv">&nbsp; Players</span></a></li>
+                        <li role="recherche" class="text-center" style="width:33.33333333333333%"><a href="#recherche_events" aria-controls="recherche_events" role="tab" class="text-center" data-toggle="tab"><i class="fa fa-trophy"></i><span key="FindEvents" class="TranslationDiv">&nbsp; Events</span></a></li>
+                        <li role="recherche"class="text-center"  style="width:33.33333333333333%"><a href="#recherche_place" aria-controls="recherche_place" role="tab" data-toggle="tab"><i class="fa fa-map-marker"></i><span key="FindPlaces" class="TranslationDiv">&nbsp; Places</span></a></li>
+                      </ul>
+                      <div class="tab-content" style="padding-top:20px;padding-bottom:20px;">
+                        <div role="tabpanel" class="tab-pane active" id="recherche_players">
+                        <form action="searchPage.html">
+                           <input type="text" id="getlat" style="color:black;display:none;" name="lat">
+                           <input type="text" id="getlong" style="color:black;display:none;" name="long">
+                            
+                                  <b style="color:#582D1C;font-size:10px;" key="Distance" class="TranslationDiv">Distance</b>
+                                   <output id="rangePrimary" class="out">10</output><span style="color:#582D1C;font-size:10px;"> km</span>
+                                  <div class="range range-primary"  style="width:100%;height:10px;margin-bottom:10px">
+
+                                    <input type="range" name="range" id="range" min="1" max="20" value="10" onchange="rangePrimary.value=value" style="height:10px;">
+                                    
+                                  </div>
+
+                            <table>
+                             
+                              <tr>
+                                <th class="table_event"><h5><b style="color:#582D1C;font-size:10px;" key="Age" class="TranslationDiv">Age</b></h5></th>
+                                <td>
+                                  <span style="color:black;font-size:11px;" key="FROM" class="TranslationDiv">From</span>
+                                  <select name="age_from" id="age_from"  class="form-control input-sm input-block  select_event">
+                                      
+                                  </select>
+                                </td>
+                                <td>
+                                  <span style="color:black;font-size:11px;" key="TO" class="TranslationDiv">To</span>
+                                  <select name="age_to" id="age_to"  class="form-control input-sm input-block  select_event">
+                                      
+                                  </select>
+                                </td>
+                              </tr>
+                            </table>
+                            <table>
+                              <tr>
+                                  <th class="table_activity"><h5><b style="color:#582D1C;font-size:10px;" key="Gender" class="TranslationDiv">Gender </b></h5></th>
+                                  <td class="table_distance text-center"  style="font-size: 10px;">
+                                      <input type="radio" checked="checked" name="gender" value="0"/>
+                                      <font style="color:black;" key="All" class="TranslationDiv"> All</font>
+                                  </td>
+                                  <td class="table_distance text-center"  style="font-size: 10px;">
+                                      <input type="radio" name="gender" value="2" />
+                                      <font style="color:black;" key="Female" class="TranslationDiv"> Female</font>
+                                  </td>
+                                  <td class="table_distance text-center"  style="font-size: 10px;">
+                                      <input type="radio" name="gender" value="1"/>
+                                      <font style="color:black;" key="Male" class="TranslationDiv"> Male</font>
+                                  </td>
+                              </tr>
+                            </table>
+                            <table>
+                              <tr>
+                                  <th class="table_activity"><h5><b style="color:#582D1C;font-size:10px;" key="Profile" class="TranslationDiv">Profile</b></h5></th>
+                                  <td class="table_distance text-center"  style="font-size: 10px;">
+                                      <input type="radio" checked="checked" name="profile" value="all"/>
+                                      <font style="color:black;" key="All" class="TranslationDiv">All</font>
+                                  </td>
+                                  <td class="table_distance text-center"  style="font-size: 10px;">
+                                      <input type="radio" name="profile" value="player" />
+                                      <font style="color:black;" key="Player" class="TranslationDiv">Player</font>
+                                  </td>
+                                  <td class="table_distance text-center"  style="font-size: 10px;">
+                                      <input type="radio" name="profile" value="arbiter"/>
+                                      <font style="color:black;" key="Arbiter" class="TranslationDiv"> Arbiter</font>
+                                  </td>
+                                  <td class="table_distance text-center"  style="font-size: 10px;">
+                                      <input type="radio" name="profile" value="trainer"/>
+                                      <font style="color:black;" key="Trainer" class="TranslationDiv"> Trainer</font>
+                                  </td>
+                                  <td class="table_distance text-center"  style="font-size: 10px;">
+                                      <input type="radio" name="profile" value="organizer"/>
+                                      <font style="color:black;" key="Organiser" class="TranslationDiv"> Organizer</font>
+                                  </td>
+                              </tr>
+                            </table>
+                            <button class="btn btn-sm center-block button_event"><b key="SearchMembers" class="TranslationDiv">SEARCH MEMBERS</b></button>
+                            </form>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="recherche_events">
+                          <form action="searchPageEvent.html">
+                            
+                                <input type="text" id="getlat1" style="color:black;display:none;" name="lat1">
+                                <input type="text" id="getlong1" style="color:black;display:none;" name="long1">
+                                <b style="color:#582D1C;font-size:10px;" key="Distance" class="TranslationDiv">Distance</b> 
+                                
+                                <output id="rangeSuccess" class="out">150</output><span style="color:#582D1C;font-size:10px;"> km</span>
+                                  <div class="range range-success"  style="width:100%;height:10px;margin-bottom:10px">
+
+                                    <input type="range" name="rangeevent" id="rangeevent" min="1" max="300" value="150" onchange="rangeSuccess.value=value" style="height:10px;">
+                                    
+                                  </div>
+                            <table>
+                              <tr>
+                                <th class="table_event"><h5><b style="color:#582D1C;font-size:10px;" key="EventType" class="TranslationDiv">Event Type</b></h5></th>
+                                <td>
+                                  <select name="event_type" id="event_type_recheche"  class="form-control input-sm input-block  select_event">
+                                      
+                                  </select>
+                                </td>
+                              </tr>
+                            </table>
+                            <table>
+                              <tr>
+                                <th class="table_activity">
+                                	<h5><b style="color:#582D1C;font-size:10px;" key="Activity" class="TranslationDiv">Activité</b></h5>
+                                </th>
+                                <td style="font-size: 10px;">
+                                    <!--<font style="color:black;"><span key="TakingPlaceMaxDays" class="TranslationDiv">Taking Place in max</span> <b id="xdayheader">15</b> <span key="DAYS" class="TranslationDiv">days</span>&nbsp;-->
+                                    <output id="rangeDanger" class="out">10</output>
+                                  <div class="range range-danger"  style="width:100%;height:10px;margin-bottom:10px">
+
+                                    <input type="range" name="activity" id="activity" min="1" max="20" value="10" onchange="rangeDanger.value=value" style="height:10px;">
+                                    
+                                  </div>
+                                </td>
+                                <!--<td class="table_distance"  style="font-size: 10px;">
+                                    <input type="radio" name="activity" value="0" />
+                                    <font style="color:black;" key="TakingPlaceToday" class="TranslationDiv"> Taking Place Today</font> 
+                                </td>-->
+                              </tr>
+                            </table>
+                            <button class="btn btn-sm center-block button_event"><b key="SearchEvents" class="TranslationDiv">SEARCH EVENTS</b></button>
+                            </form>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="recherche_place">
+                          <form action="searchPagePlace.html">
+                                <input type="text" id="getlat2" style="color:black;display:none;" name="lat2">
+                                <input type="text" id="getlong2" style="color:black;display:none;" name="long2">
+                                  <b style="color:#582D1C;font-size:10px;" key="Distance" class="TranslationDiv">Distance</b> 
+                                  <output id="rangeInfo" class="out">50</output><span style="color:#582D1C;font-size:10px;"> km</span>
+                                  <div class="range range-info"  style="width:100%;height:10px;margin-bottom:10px">
+
+                                    <input type="range" name="rangeplace" id="rangeplace" min="1" max="50" value="50" onchange="rangeInfo.value=value" style="height:10px;">
+                                    
+                                  </div>
+                            <table>
+                              <tr>
+                                <th class="table_event"><h5><b style="color:#582D1C;font-size:10px;" key="MeetingPlaceType" class="TranslationDiv">Meeting Place Type</b></h5></th>
+                                <td>
+                                  <select name="meeting_type" id="type_meeting_search"  class="form-control input-sm input-block  select_event">
+                                      <option value='0'>All</option>
+                                  </select>
+                                </td>
+                              </tr>
+                            </table>
+                            <table>
+                              <tr>
+                                  <th class="table_activity"><h5><b style="color:#582D1C;font-size:10px;" key="ActivityNow" class="TranslationDiv">Activity now</b> :</h5></th>
+                                  <td class="table_distance"  style="font-size: 10px;">
+                                      <input type="radio" checked="checked" name="status" value="0" />
+                                      <font style="color:black;" key="All" class="TranslationDiv"> All</font>
+                                  </td>
+                                  <td class="table_distance"  style="font-size: 10px;">
+                                      <input type="radio" name="status" value="1" />
+                                      <font style="color:black;" key="OnlyOpenedNow" class="TranslationDiv"> Only Opened Now</font>
+                                  </td>
+                              </tr>
+                            </table>
+                            <button class="btn btn-sm center-block button_event"><b key="SearchPlace" class="TranslationDiv">SEARCH PLACES</b></button>
+                            </form>
+                        </div>
+                        
+                        
+                        
+                        
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div><!-- /.navbar-collapse -->
+
+  </div><!-- /.container-fluid -->
+
+</nav>
+<div class="container-full" >
+  <div class="row">
+      <div class="col-xs-12" >
+          <div class="alert alert-success" id="messagemapsuccess" style="display:none;color:black">
+              <p class="text-center">
+              	<span key="PositionUpdated" class="TranslationDiv">Position updated</span>:
+                Lat : <b id="lat"></b>, Long : <b id="long"></b></p>
+          </div> 
+          <div class="alert alert-danger" id="messagemaperror" style="display:none;color:black">
+              <p class="text-center" key="ErrorPositionUpdate" class="TranslationDiv">Erreur est survenue lors de de mise à jour de votre Position</p>
+          </div> 
+      </div>
+  </div>
+</div>
+  <script type="text/javascript" src="js/Languages.js"></script>
+<script type="text/javascript" src="scripts/EventScript/eventType.js"></script>
+<script type="text/javascript" src="scripts/MeetingScript/meetingType.js"></script>
+<script type="text/javascript" src="scripts/MeetingScript/meetingTypeList.js"></script>
+<script type="text/javascript">
+  if(sessionStorage.getItem("identifiant")==null && localStorage.getItem("identifiantLocal")==null){
+	  window.location.href = 'index.html';
+  }
+  
+
+  for (var i = 5; i <= 100; i+=5) {
+        $('#age_from').append("<option>"+i+"</option>");
+  };
+  for (var i = 5; i <= 100; i+=5) {
+        if(i == 60){
+          $('#age_to').append("<option selected='selected'>"+i+"</option>");
+        }else{
+          $('#age_to').append("<option>"+i+"</option>");
+        }
+        
+  };
+  
+$(document).ready(function(){
+	$('#titlePage').text($('title').text());
+});
+</script>
+
+
+

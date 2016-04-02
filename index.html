@@ -1,0 +1,182 @@
+
+
+<!DOCTYPE html/>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Authentification</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="cordova.js"></script>
+	<!--<script src="js/openfb.js"></script>
+    <script src="js/loginfacebook.js"></script>
+    <script src="js/logingoogle.js"></script>-->
+    <script src="js/Languages.js"></script>
+
+  </head>
+  <body style="padding-bottom:0px;padding-top:0px;">
+
+    <div class="container">
+        <div class="row" style="height:150vh;">
+            
+            <div class="col-md-12 bloc_logo">
+                <div class="logo text-center">
+                    <img src="image/logo.jpg" class="img-responsive center-block" width="150">
+                    <b class="texte_logo text-uppercase text-center">chess family</b>
+                </div>
+                <!--<div class="lang_switcher">
+                    <button id="en" class="lang">EN</button>
+                    <button id="fr" class="lang">FR</button>
+                </div>-->
+            </div>
+            <div class="col-md-12">
+                <div class="champ">
+                
+                <div id="header"></div>
+<div class="row">
+            <div class="col-xs-12">
+                        <img src="image/load.gif" style="display:none;" class="load_connexion center-block">
+            </div>
+        </div>
+<div class="testlogin" style="display:none;"></div>
+
+                    
+                    <form name="connexionForm" id="connexionForm" action="#">
+                        <div class="input-group">
+                          <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                          <input type="email" class="form-control input_class input-md TranslationDiv" id="login" aria-describedby="inputGroupSuccess1Status" placeholder="EMAIL" />
+                        </div>
+                        <div class="input-group">
+                          <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                          <input type="password" class="form-control input_class input-md TranslationDiv" id="pass" aria-describedby="inputGroupSuccess1Status" placeholder="PASSWORD" />
+                        </div>
+                        <div class="checkbox" style="clear:both; height:25px;">
+                          <label class="pull-left">
+                            <input id="remeber_me" name="remeber_me" type="checkbox" /> <font style="font-size:10px;color:#978E7A;font-weight:bold;" class="text-uppercase TranslationDiv" key="REMEMBERME">remember me</font>
+                          </label>
+                          <!--<label class="pull-right" style="margin-bottom:20px;">
+                            <font style="font-size:10px;color:#978E7A;font-weight:bold;" class="text-uppercase">forgot password ?</font>
+                          </label>  -->
+                        </div>
+                        <div class="checkbox"></div>
+                        <div class="form-group">
+                            <button class="btn btn-md btn-block btn_index">
+                            <i class="glyphicon glyphicon-envelope pull-left"></i>
+                            <span class="TranslationDiv" key="Login_with">Log in with </span> <b key="Email" class="ok">Email</b></button>
+                        </div>
+                        
+                        
+                        <div class="text-center text-uppercase" style="margin-top:10px;margin-bottom:10px;font-size:12px;color:#978E7A;">
+                        	<span key="New_Sign_up" class="TranslationDiv">New ? Sign up</span>
+                            <a href="register.html">
+                            	<b><span key="HERE" class="TranslationDiv">here</span></b>
+                            </a>
+                         </div>
+                        
+                        
+                        <!--<div class="text-center text-uppercase TranslationDiv" key="OR" style="margin-top:-5px;margin-bottom:10px;font-size:10px;color:#978E7A;">OR</div>-->
+                        </form>
+                        <div class="form-group">
+                             <!--<button class="btn btn-md btn-block btn_index" onclick="login()">
+                              <i class="fa fa-facebook pull-left"></i>
+                              <span class="TranslationDiv" key="Login_with">Log in with </span> <b>Facebook</b>
+                            </button>
+                            <button class="btn btn-md btn-block btn_index" onclick="callGoogle()">
+                              <i class="fa fa-google-plus pull-left"></i>
+                              <span class="TranslationDiv" key="Login_with">Log in with </span> <b>Google Plus</b>
+                            </button>-->
+                            
+                        <!--    ajout user s'il est connecté avec facebook et s'il n'est pas existant -->
+                        <div style="display:none">
+                          <form  id="member_add" action="#">
+                            <input type="text" id="detect_os" /><br />
+                            <input type="text" id="detect_UUID" />
+                            <input type="text" id="FacebookID" />
+                            <input type="text" id="GooglePlusID" />
+                            <input type="text" id="name" />
+                            <input type="text" id="last_name" />
+                            <input type="text" id="email" />
+                            <input type="text" id="birthday" />
+                            <input type="text" id="genre" />
+                            
+                            
+                            <input type="text" id="password" />
+                            <input type="text" id="password_conf" />
+                            
+                            
+                            
+                            
+                            <img id="ImgMember" src="" width="200px" />
+                            
+                            
+                    	</form>
+                    </div>
+                        
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    
+    <!--<script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+    <script src="scripts/MemberScript/MemberAdd.js"></script>-->
+     <script src="scripts/MemberScript/MemberConnect.js"></script>
+     
+     
+     
+     
+     <script type="text/javascript" language="javascript">
+    
+/*
+document.addEventListener('deviceready', SplashScreen, true);
+function SplashScreen() {
+	navigator.splashscreen.show();
+	setTimeout(function() {
+	 navigator.splashscreen.hide();
+	 }, 5000);
+}*/
+
+
+document.addEventListener('deviceready', function () {
+  // Enable to debug issues.
+  // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+  
+  var notificationOpenedCallback = function(jsonData) {
+	  //alert("success");
+    alert('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
+  };
+
+  window.plugins.OneSignal.init("6b7a8cef-2b9c-4205-ad53-f2ebedda3c6a",
+                                 {googleProjectNumber: "663342117564"},
+                                 notificationOpenedCallback);
+  
+  // Show an alert box if a notification comes in when the user is in your app.
+  window.plugins.OneSignal.enableInAppAlertNotification(true);
+}, false);  
+	
+	//verification de la connectivité
+	document.addEventListener("offline", checkConnectivity, true);
+	function checkConnectivity(){
+		alert("Merci d'activer la Connexion!");
+	}
+
+  if(sessionStorage.getItem("identifiant")!=null){
+	  //alert("sessionStorage : "+sessionStorage.getItem("identifiant"));
+	  window.location.href = 'home.html';
+  }else if(localStorage.getItem("identifiantLocal")!=null){
+	  //alert("localStorage : "+localStorage.getItem("identifiantLocal"));
+	  window.location.href = 'home.html';
+  }
+
+  
+</script>
+  </body>
+
+</html>

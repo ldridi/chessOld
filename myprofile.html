@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+         <meta charset="utf-8">
+         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+         <title key="EditProfile" class="TranslationDiv">My Profile - Edit</title>
+         <link href="css/bootstrap.min.css" rel="stylesheet">
+         <link rel="stylesheet" type="text/css" href="css/style.css">
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+         <!--[if lt IE 9]>
+         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+         <![endif]-->
+    </head>
+     <body>
+     <div id="header"></div>
+        <div class="container">
+            <div class="row" style="height:150vh;">
+                <div class="col-xs-6 bloc_logo">
+
+                    <div class="logo ">
+                        <img src="image/logo.jpg" class="img-responsive pull-left" width="50">
+                        <span><b key="ProfileOf" class="TranslationDiv">Profile of :</b></span><br/>
+                        <span id="NameUserTitle"><b></b></span>
+                        <span class="yourid"></span></b>
+                        
+                    </div>
+                </div>
+                <div class="col-xs-6 bloc_logo">
+                <div class="logo ">
+                    <div class="dropdown pull-right">
+                        <button style="background:#572C1B; color:#FFF;" class="btn btn-default dropdown-toggle btn-xs" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                          <i class="glyphicon glyphicon-cog" style="color:white;"></i> <span key="SetAvailability" class="TranslationDiv">Status</span>
+                          
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="dropmenu">
+                          <li>
+                              <a onclick="setConnected()">
+                                <i class='fa fa-circle' style='font-size:10px;color:#98BF0A'></i> <span key="Connected" class="TranslationDiv">Available</span>
+                              </a>
+                          </li>
+                          <li>
+                              <a onclick="setDisconnected()">
+                                <i class='fa fa-circle' style='font-size:10px;color:red'></i> <span key="Disconnected" class="TranslationDiv">Away</span>
+                              </a>
+                          </li>
+                        </ul>
+                      </div>
+                      </div>
+                </div>
+                <div class="col-xs-12">
+                    <div>
+                      <ul class="nav nav-tabs menu-ho" role="tablist" style="border-bottom:0px;">
+                        <li role="recherche" class="active text-center" style="width:25%">
+                        	<a href="#profile" aria-controls="recherche_players" role="tab" data-toggle="tab">
+                            	<i class="fa fa-user" style="font-size:20px;"></i><br>
+                                <span key="Profile" class="TranslationDiv">Profile</span>
+                            </a>
+                        </li>
+                        <li role="recherche" class="text-center" style="width:25%">
+                        	<a href="#member" aria-controls="recherche_events" role="tab" class="text-center" data-toggle="tab">
+                            	<i class="fa fa-trophy" style="font-size:20px;"></i><br>
+                                <span key="Photo" class="TranslationDiv">Photo</span>
+                            </a>
+                        </li>
+                        <li role="recherche"class="text-center"  style="width:25%">
+                        	<a href="#chess" aria-controls="recherche_place" role="tab" data-toggle="tab">
+                            	<i class="glyphicon glyphicon-tower" style="font-size:20px;"></i><br><span key="Chess" class="TranslationDiv">Chess</span>
+                            </a>
+                        </li>
+                        <li role="recherche"class="text-center"  style="width:25%">
+                        	<a href="#pass" aria-controls="recherche_place" role="tab" data-toggle="tab">
+                            	<i class="glyphicon glyphicon-lock" style="font-size:20px;"></i><br><span key="Password" class="TranslationDiv">Password</span>
+                            </a>
+                        </li>
+                      </ul>
+                      <div class="tab-content" style="padding-top:20px;padding-bottom:20px;">
+                        <div role="tabpanel" class="tab-pane active" id="profile">
+                           
+<form  id="member_add" action="#">
+
+                            <div class="input-group">
+                              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span></span>
+                              
+                              <input type="text" name="name" id="name" class="form-control input_class input-md" aria-describedby="inputGroupSuccess1Status" placeholder="Name">
+                            </div>
+                            <div class="input-group">
+                              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span></span>
+                              <input type="text" name="last_name" id="last_name" class="form-control input_class input-md" aria-describedby="inputGroupSuccess1Status" placeholder="Last Name">
+                            </div>
+                            
+                            <div class="input-group input_date">
+                              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                              <input  type="date" name="birthday" id="birthday" class="form-control input_class input-md" aria-describedby="inputGroupSuccess1Status" placeholder="Birthday">
+
+                            </div>
+                            <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                              <select name="genre" id="genre" class="form-control select_bloc">
+                                <option value="1">Male</option>
+                                <option value="2">Female</option>
+                            </select>
+                            </div>
+                            <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+                            <input type="hidden" id="Country_id">
+                            <select name="country" id="country" class="form-control select_bloc">
+                                  
+                              </select>
+                            </div>
+                            <div class="alert alert-info" id="updateok" style="display:none;" key="MisAJour_OK" class="TranslationDiv">
+                              Vos Informations ont été mis à jour!
+                           </div>
+                            <div class="form-group">
+                               <input type="button" id="submit" onclick="MemberUpdateProfileFunction()" value="Submit" class="btn btn-md btn-block btn_index"/></br>
+                               
+                            </div>
+                            
+                        </form>                           
+                            
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="member">
+                          
+                            <div class="input-group col-xs-12">
+        <button onclick="capturePhoto();" class="form-control input_class input-md">
+        	<span key="CapturePhoto" class="TranslationDiv">Capture Photo</span>
+        </button><br><br>
+        <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);" class="form-control input_class input-md">
+        	<span key="FromGallery" class="TranslationDiv">From Gallery</span>
+        </button><br>
+        <img id="image" src="" style="width:100%;">
+        <img src="image/load.gif" style="margin-top:5px; display:none;" class="load_upload_photo_member center-block">
+        
+                                  <div class="alert alert-info" id="updatePhotoOK" style="display:none;" key="MisAJour_OK" class="TranslationDiv">
+                                      Vos Informations ont été mis à jour!
+                                   </div> 
+                            </div>
+                            <div class="form-group">
+                               <input type="button" id="submit" onclick="MemberSetPhoto()" value="Submit" class="btn btn-md btn-block btn_index"/>
+                              
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="chess">
+                        
+<div class="row">
+  <div class="col-xs-12">
+      <div class="checkbox">
+          <label>
+              <input type="checkbox" id="player"><span key="IsPlayer" class="TranslationDiv">Is Player</span>
+          </label>
+      </div>
+      <div class="checkbox">
+          <label>
+              <input type="checkbox" id="arbiter"><span key="IsArbiter" class="TranslationDiv">Is Arbiter</span>
+          </label>
+      </div>
+      <div class="checkbox">
+          <label>
+              <input type="checkbox" id="titled"><span key="IsTitledPlayer" class="TranslationDiv">Is titled player</span>
+          </label>
+           <select id="titleProfile">
+           	  <option value="0">-- Choose a Title --</option>
+              <option value="CM">CM</option>
+              <option value="WCM">WCM</option>
+              <option value="FM">FM</option>
+              <option value="WFM">WFM</option>
+              <option value="IM">IM</option>
+              <option value="WIM">WIM</option>
+              <option value="GM">GM</option>
+              <option value="WGM">WGM</option>
+            </select> 
+      </div>
+      <div class="checkbox">
+          <label>
+              <input type="checkbox" id="trainer"><span key="IsTrainer" class="TranslationDiv">Is Trainer</span>
+          </label>
+          <select id="TrainerLevelProfile">
+              <option value="0">-- Choose a Level --</option>
+              <option value="Beginners">Beginners</option>
+              <option value="Intermediate">Intermediate</option>
+              <option value="Advanced">Advanced</option>
+              <option value="High">High</option>
+          </select> 
+      </div>
+      
+      <div class="alert alert-info" id="updateChessProfileOK" style="display:none;" key="MisAJour_OK" class="TranslationDiv">
+                              Vos Informations ont été mis à jour!
+                           </div>
+      
+      <div class="form-group">
+   <input type="button" id="submit" onclick="MemberUpdateChessProfile()" value="Submit" class="btn btn-md btn-block btn_index"/>
+  
+</div>
+  </div>
+  
+</div>
+                            
+                          
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="pass">
+                        
+                            <div class="input-group">
+                              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                              <input type="password" name="password" id="password" class="form-control input_class input-md" aria-describedby="inputGroupSuccess1Status" placeholder="New Password">
+                            </div>
+                            <div class="input-group">
+                              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></i></span>
+                              <input type="password" name="password_conf" id="password_conf" class="form-control input_class input-md" aria-describedby="inputGroupSuccess1Status" placeholder="New Password (Confirmation)">
+                            </div>
+                            
+                            <div class="alert alert-info" id="updatePasswordOK" style="display:none;" key="MisAJour_OK" class="TranslationDiv">
+                              Vos Informations ont été mis à jour!
+                           </div>
+                            
+                            <div class="form-group">
+                               <input type="button" id="submit" onclick="MemberUpdatePassword()" value="Submit" class="btn btn-md btn-block btn_index"/>
+                              
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>            </div>
+        </div>     
+    	<div id="footer" class="col-xs-12"></div>
+        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+        
+		<script type="text/javascript" src="cordova.js" charset="utf-8"></script>
+        <!--<script type="text/javascript" src="js/phonegap-1.0.0.js" charset="utf-8"></script>-->
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/templateGenerator.js"></script>
+        <script src="js/camera.js" type="text/javascript"></script>
+        
+        <!--<script type="text/javascript" src="scripts/CountryCityScript/CountryGetAll.js"></script>-->
+		<script type="text/javascript" src="scripts/MemberScript/MemberFormUpdate.js"></script>
+        
+        <script type="text/javascript" src="scripts/MemberScript/MemberUpdateProfile.js"></script>
+        <script type="text/javascript" src="scripts/MemberScript/MemberUpdatePassword.js"></script>
+        <script type="text/javascript" src="scripts/MemberScript/MemberUpdateChessProfile.js"></script>
+        <script type="text/javascript" src="scripts/MemberScript/MemberSetConnected.js"></script>
+        <script type="text/javascript" src="scripts/MemberScript/MemberSetDisconnected.js"></script>
+        <script type="text/javascript" src="scripts/MemberScript/MemberSetPhoto.js"  charset="utf-8"></script>
+        
+        <script>
+           
+            $("#titled").change(function(){
+				if ($(this).is(":checked")){
+                    $('#titleProfile').val('0');
+					$('#titleProfile').show();
+				} else {
+					$('#titleProfile').hide();
+				}
+			});
+        </script>
+
+        <script>
+           
+            $("#trainer").change(function(){
+				if ($(this).is(":checked")){
+                    $('#TrainerLevelProfile').val('0');
+					$('#TrainerLevelProfile').show();
+				} else {
+					$('#TrainerLevelProfile').hide();
+				}
+			});
+        </script>
+  </body>
+</html>
+

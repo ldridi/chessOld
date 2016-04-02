@@ -1,0 +1,44 @@
+<div class="barre_bottom navbar-fixed-bottom">
+  
+  <ul class="nav nav-tabs" role="tablist1" style="background:#f1d6a1">
+    <li style="width:20%;border-right:1px solid white;" style="">
+      <a href="home.html" class="text-uppercase text-center">
+          <i class="fa fa-home" style="font-size:30px;color:#666666"></i>
+        </a>
+    </li>
+    <li style="width:20%;border-right:1px solid white;">
+      <a href="messages.html" class="text-uppercase text-center">
+          <i class="fa fa-envelope" style="font-size:30px;color:#666666;"></i>
+            <span class="badge nbNewMessage" style="position:absolute;border-radius:50%;top:-1px;left:40px;background-color:#f24e4e;"></span>
+            </a>
+    </li>
+     <li style="width:20%;border-right:1px solid white;">
+      <a href="myNotificationRequest.html" class="text-uppercase text-center">
+          <i class="fa fa-bell" style="font-size:30px;color:#666666;"></i>
+            <span class="badge nbNewNotification" style="position:absolute;border-radius:50%;top:-1px;left:40px;background-color:#f24e4e;"></span>
+        </a>
+    </li>
+    <li style="width:20%;border-right:1px solid white;"><!--  role="presentation"<div class="icones_ko_fav"></div>  -->
+      <a href="#" id="set_location" class="text-uppercase text-center" onclick="memberSetLocation(2)">
+          <span class="affiche_memberSetLocation"><i class="glyphicon glyphicon-map-marker mapcursor" style="font-size:30px;color:#666666;"></i></span>
+      </a>
+      <img src="image/load.gif" style="margin-top:12%;display:none;" class="load_memberSetLocation center-block">
+    </li>
+  <li style="width:20%;">
+      <a href="menu.html" class="text-uppercase text-center">
+          <i class="fa fa-list" style="font-size:30px;color:#666666;"></i>
+        </a>
+    </li>
+  </ul>
+
+</div>
+<script type="text/javascript" src="scripts/MemberScript/MemberGetLocation.js"></script>
+<script type="text/javascript" src="scripts/MemberScript/MemberSetLocation.js"></script>
+
+<script type="text/javascript" src="scripts/MessagesScript/nbNewMessage.js"></script>
+<script type="text/javascript" src="scripts/NotificationsScript/nbNewNotifications.js"></script>
+<script type="text/javascript" src="scripts/MemberScript/MemberLoadSetting.js"></script>
+<script type="text/javascript">
+  setTimeout(loadSettgin(),1000);
+</script>
+

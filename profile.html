@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title key="Profile" class="TranslationDiv">Profile Details</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  <div id="header"></div>
+    <div class="row">
+    
+            <div class="col-xs-12">
+                 <img src="image/load.gif" style="margin-top:30%;display:none;" class="load_profil_member center-block" >
+            </div>
+        </div>
+    <div class="container-full " style="background:#ECECEC;" >
+        
+        <div class="row affiche_profile_member" >
+            <div class="col-xs-12" style="display:none;" id="affiche_error">
+                <div class="alert alert-danger text-center" style="border-radius:0px;" key="AlreadyFriendMsg" class="TranslationDiv">
+                    Vous êtes deja amis !
+                </div>
+            </div>
+            <div class="col-xs-12" style="display:none;" id="affiche_success">
+                <div class="alert alert-success text-center" style="border-radius:0px;" key="FriendAddedMsg" class="TranslationDiv">
+                    Vous êtes maintenant amis !
+                </div>
+            </div>
+            
+            <div class="col-xs-12" style="display:none;" id="affiche_error_notif">
+                <div class="alert alert-danger text-center" style="border-radius:0px;" key="ProblemNotificationMsg" class="TranslationDiv">
+                    Problem when submitting a notification!
+                </div>
+            </div>
+            <div class="col-xs-12" style="display:none;" id="affiche_success_notif">
+                <div class="alert alert-success text-center" style="border-radius:0px;" key="NotificationAddedMsg" class="TranslationDiv">
+                    Notification Sended Successfully !
+                </div>
+            </div>
+            
+            <div class="col-md-12 bloc_profile">
+                <div class="logo text-center">
+                  <div class="image_profil">
+                    
+                  </div>
+                    <b style="font-size:20px;" class="nom_profil"></b>
+                    <b class="affiche_id" style="font-size:15px;"> </b>
+                    <span class="yourid"></span></b>
+                    </br>  
+                    <!--<font style="font-size:12px;color:grey;">Active <b>1 Week </b> ago | Now about <b>7 Km</b> away</font>-->
+                </div>
+            </div>
+            
+          <div class="col-xs-12">
+            <div>
+              <ul class="nav nav-tabs menu-ho1" role="tablist" style="background:#955935;height:60px;">
+                <li role="presentation" class="text-center" style="width:20%">
+                  <button class="btn text-uppercase" style="background:#955935;color:white;" id="profile_member">
+                      <!--<div class="icones_ok_fav"></div>
+                      <div class="icones_ko_fav"><i class='fa fa-user' style='font-size:20px;'></i></div>-->
+                      <div><i class='fa fa-user' style='font-size:20px;'></i></div>
+                      <font class="text-uppercase"><b style="font-size:10px;" key="Profile" class="TranslationDiv">Profile</b></font>
+                  </button>
+                </li>
+                <li role="presentation" class="text-center" style="width:20%">
+                  <button class="btn text-uppercase" id="send_invitation" onclick="MemberAddFriend()" style="background:#955935;color:white;">
+                  	  <div class="icones_ok_fav"></div>
+                      <div class="icones_ko_fav"><i class='fa fa-star-o' style='font-size:20px;'></i></div>
+                      <font class="text-uppercase"><b style="font-size:10px;" key="Favorite" class="TranslationDiv">Favorite</b></font>
+                  </button>
+                </li>
+                <li role="presentation" class="text-center" style="width:20%">
+                  <button class="btn text-uppercase" id="send_invitation" onclick="AddNotifications()" style="background:#955935;color:white;">
+                      <div class="icones_chargement"></div>
+                      <div class="icones_ok"></div>
+                      <div class="icones_ko"><i class='fa fa-gamepad' style='font-size:20px;'></i></div>
+                      <font class="text-uppercase"><b style="font-size:10px;" key="Play" class="TranslationDiv">Play</b></font>
+                  </button>
+                </li>
+                <input type="hidden" id="memberget">
+                <li role="presentation" class="text-center" style="width:20%">
+                  <button class="message_item btn text-uppercase" id="send_invitation" style="background:#955935;color:white;">
+                      <div class="icones_ko_message"><i class='fa fa-envelope-o' style='font-size:20px;'></i></div>
+                      <font class="text-uppercase"><b style="font-size:10px;" key="Message" class="TranslationDiv">Message</b></font>
+                  </button>
+                </li>
+                <li role="presentation" style="width:20%"  class="text-center">
+                	<a href="#feed" aria-controls="feed" role="tab" data-toggle="tab" class="text-uppercase">
+                		<i class="fa fa-rss" style="font-size:20px;"></i></br><span key="Feed" class="TranslationDiv">feed</span>
+                        </a>
+                </li>
+              </ul>
+              <div class="tab-content" style="padding-left:5px;padding-right:5px;background:#ECECEC;">
+                <div role="tabpanel" class="tab-pane active" id="home">
+                    <table class="table table-condensed" width="80%">
+                        <tr>
+                            <td><font color="grey" key="Age" class="TranslationDiv">Age</font></td>
+                            <td id="age"></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><font color="grey" key="Gender" class="TranslationDiv">Gender</font></td>
+                            <td id="gender"></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><font color="grey" key="LOCATION" class="TranslationDiv">Location</font></td>
+                            <td><b>-</b></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><font color="grey" key="Language" class="TranslationDiv">Languages</font></td>
+                            <td class="lang"></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><font color="grey" key="ChessProfile" class="TranslationDiv">Chess Profile</font></td>
+                            <td><b key="Player" class="TranslationDiv">Player</b></td>
+                            <td class="icone_player"></td>
+                            <td class="titre_player"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><b key="Arbiter" class="TranslationDiv">Arbiter</b></td>
+                            <td class="icone_arbiter"></td>
+                            <td></td
+                        ></tr>
+                        <tr>
+                            <td></td>
+                            <td><b key="Trainer" class="TranslationDiv">trainer</b></td>
+                            <td class="icone_trainer"></td>
+                            <td class="titre_trainer"></td
+                        ></tr>
+                        <tr>
+                            <td></td>
+                            <td><b key="Organiser" class="TranslationDiv">Organizer</b></td>
+                            <td class="icone_organizer"></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+                <div role="tabpanel" class="tab-pane " id="feed">
+                    
+                    
+                    <div class="publication_list" style="margin-top:0px;">
+                        
+                    </div>
+                    
+                    
+                    
+                </div>
+                <div role="tabpanel" class="tab-pane" id="profile">
+                  <div class="row">
+                        <div class="col-xs-12" style="padding-top:15px;padding-bottom:15px;padding-left:30px;">
+                        <font style="font-size:18px;color:grey;">RESULTS</font>
+                    </div>
+                    <div class="col-xs-12">
+                        <ul class="list-group list-menu">
+                          <li class="list-group-item">
+                            <span class="badge" style="background:white;"><i class="fa fa-map-marker" style="font-size:30px;color:grey;"></i></span>
+                            <b>Budapest Grand Tournament <i class="fa fa-circle" style="font-size:15px;color:#98BF0A"></i></b><br>
+                            <font style="font-size:12px;color:grey;">10/30/2015&nbsp;&nbsp;8:00PM - 10/31/2015&nbsp;&nbsp;2:00AM</font>
+                          </li>
+                          <li class="list-group-item">
+                            <span class="badge" style="background:white;"><i class="fa fa-map-marker" style="font-size:30px;color:grey;"></i></span>
+                            <b>Budapest Grand Tournament <i class="fa fa-circle" style="font-size:15px;color:#98BF0A"></i></b><br>
+                            <font style="font-size:12px;color:grey;">10/30/2015&nbsp;&nbsp;8:00PM - 10/31/2015&nbsp;&nbsp;2:00AM</font>
+                          </li>
+                          <li class="list-group-item">
+                            <span class="badge" style="background:white;"><i class="fa fa-map-marker" style="font-size:30px;color:grey;"></i></span>
+                            <b>Budapest Grand Tournament <i class="fa fa-circle" style="font-size:15px;color:#F14D4D"></i></b><br>
+                            <font style="font-size:12px;color:grey;">10/30/2015&nbsp;&nbsp;8:00PM - 10/31/2015&nbsp;&nbsp;2:00AM</font>
+                          </li>
+                          <li class="list-group-item">
+                            <span class="badge" style="background:white;"><i class="fa fa-map-marker" style="font-size:30px;color:grey;"></i></span>
+                            <b>Budapest Grand Tournament <i class="fa fa-circle" style="font-size:15px;color:#F14D4D"></i></b><br>
+                            <font style="font-size:12px;color:grey;">10/30/2015&nbsp;&nbsp;8:00PM - 10/31/2015&nbsp;&nbsp;2:00AM</font>
+                          </li>
+
+                        </ul>
+                    </div>
+                  </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="messages">
+                  <div class="row">
+                        <div class="col-xs-12" style="padding-top:15px;padding-bottom:15px;padding-left:30px;">
+                        <font style="font-size:18px;color:grey;">RESULTS</font>
+                    </div>
+                    <div class="col-xs-12">
+                        <ul class="list-group list-menu">
+                          
+                        </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+          
+      
+    </div>
+   <div id="footer" class="col-xs-12"></div>
+    
+
+
+   <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="cordova.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/phonegap-1.0.0.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="js/templateGenerator.js"></script>
+   <!--<script type="text/javascript" src="js/Languages.js"></script>-->
+   
+    <script src="scripts/MemberScript/MemberAddFriend.js"></script> 
+    <script src="scripts/MemberScript/MemberGet.js"></script>
+    
+    <script type="text/javascript" src="scripts/PublicationScript/PublicationsGetAllByMember.js"></script>
+    <script src="scripts/NotificationsScript/NotificationAdd.js"></script>
+    <!--<script src="scripts/MemberScript/MemberGetLanguage.js"></script>
+    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>-->
+    
+    <script type="text/javascript">
+    $(document).on('click','.message_item', function(){
+      document.location.href = 'messages_detail.html?sender_id=' + $('#memberget').val(); 
+    });
+    </script>
+
+    <script type="text/javascript">
+    $(document).on('click','#profile_member', function(){
+      document.location.href = 'profile.html?id_member=' + $('#memberget').val(); 
+    });
+    </script>
+  </body>
+
+</html>

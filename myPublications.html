@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title key="MyPublications" class="TranslationDiv">My Publications</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body style="background:#DEDEDE">
+
+  <div id="header"></div>
+  <div class="container-fluid white" style="padding-top:10px;">
+      <div class="status" >
+          <div class="row">
+              <div class="col-xs-12">
+                  <div class="well well-sm" style="border-radius:10px;">
+                      <div class="row">
+                          <div class="col-xs-12">
+                              
+                          </div>
+                          <div class="col-xs-12">
+                              <form>
+                                  <div class="form-group">
+                                      <textarea style="width:100%;resize:none;height:25px;" id="statusinput" required placeholder="texte"></textarea>
+                                  </div>
+                                  <!-- lien video -->
+                                  <div class="form-group">
+                                      <input type="text" style="width:100%;resize:none;display:none;" id="lienvideo" required placeholder="lien video" class="form-control input-sm">
+                                  </div>
+                                  <!-- lien web -->
+                                  <div class="form-group">
+                                      <input type="text" style="width:100%;resize:none;display:none;" id="lienweb" required placeholder="lien web" class="form-control input-sm">
+                                  </div>
+                              </form>
+                          </div>
+                          <div class="col-xs-12">
+                              <!--<button class="btn btn-xs btn_index " id="video"><i class='glyphicon glyphicon-facetime-video'></i>&nbsp;&nbsp;Video</button>
+                              <button class="btn btn-xs btn_index" id="link"><i class='glyphicon glyphicon-globe'></i>&nbsp;&nbsp;Link</button>
+                              <button class="btn btn-xs btn_index" id="photo"><i class='glyphicon glyphicon-camera'></i>&nbsp;&nbsp;Photo</button>-->
+                              
+                              
+        <button onclick="capturePhoto();" class="btn_index input_class input-md">
+        	<i class='glyphicon glyphicon-camera'></i>&nbsp;<span key="CAMERA" class="TranslationDiv">Camera</span>
+        </button>
+        <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);" class="btn_index input_class input-md">
+        	<i class='glyphicon glyphicon-picture'></i>&nbsp;<span key="GALLERY" class="TranslationDiv">Gallery</span>
+        </button>
+        	 
+        <img id="image" src="" style="display:none;width:50%;">
+        <img src="image/load.gif" style="margin-top:30%; display:none;" class="load_upload_photo_publication center-block">
+        <div class="alert alert-success" style="display:none;" id="message" key="Ajout_OK_msg" class="TranslationDiv">
+          Status Ajouté !
+      </div>
+      <div class="alert alert-danger" style="display:none;" id="messagee" key="Ajout_KO_msg" class="TranslationDiv">
+          Ajouter un status
+      </div>
+                              <button class="btn btn-xs btn_index pull-right" onclick="AddPublication()"><i class='glyphicon glyphicon-send'></i>&nbsp;&nbsp;<span key="SUBMIT" class="TranslationDiv">Submit</span></button>
+                              
+                              
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row" >
+            <div class="col-xs-12" >
+                        <img src="image/load.gif" style="margin-top:30%;" class="load_detail_publication center-block">
+            </div>
+        </div>
+      <div class="publication_list">
+  		    
+          
+      </div>
+      </div>
+      <!--<div class="row" style="margin-top:30px;">
+          <div class="col-xs-12 text-center">
+              <a href="searchPage.html"><button class="btn btn-sm btn-primary">Events list</button></a>
+              <a href="menu.html"><button class=" btn btn-sm btn-primary">page menu</button></a>
+              <a href="index.html"><button class=" btn btn-sm btn-primary">sign in</button></a>
+           </div>
+      </div>-->
+        
+        <!-- Submit publication -->
+        
+        
+        <!--<div class="row">
+          <span class="pub">
+            <img src="image/user.png" alt="" class="imgpublic">
+            <span><h4>Oussema Nachmi</h4></span>
+          </span>
+          <div class=" text-center">
+            <input type="text" class="inputpub" placeholder="Exprimez-Vous" ><br>
+          </div>
+          <div class="btn_pub">
+            <button class="btn btn-md btn_index">Video</button>
+            <button class="btn btn-md btn_index"> Link</button>
+            <button class="btn btn-md  btn_index"> photo</button>
+          </div>
+          <div class=" text-center">
+              <input type="text" class="text-center inputdpub">
+           </div>
+
+       </div>-->
+       
+       
+  </div>
+	<div id="footer" class="col-xs-12"></div>
+
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="cordova.js" charset="utf-8"></script>
+    <!--<script type="text/javascript" src="js/phonegap-1.0.0.js" charset="utf-8"></script>-->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/templateGenerator.js"></script>
+    <script type="text/javascript" src="js/camera.js"></script>
+    
+    <script type="text/javascript" src="scripts/PublicationScript/PublicationsGetAllById.js"></script>
+    
+    <script type="text/javascript" src="scripts/PublicationScript/PublicationAdd.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('#video').click(function(){
+                
+                $('#lienvideo').toggle();
+                $('#lienweb').hide();
+            });
+            $('#link').click(function(){
+                $('#lienweb').toggle();
+                $('#lienvideo').hide();
+            });
+            $('#photo').click(function(){
+                
+            });
+        });
+    </script>
+    
+    
+  </body>
+</html>
